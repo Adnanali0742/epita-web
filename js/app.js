@@ -10,11 +10,13 @@ let c1 = document.querySelector('.c1');
 let c2 = document.querySelector('.c2');
 let c3 = document.querySelector('.c3');
 
+var win = false;
 
 let current_player = 1;
 
 cols.forEach((col) => {
 	col.onclick = (e) => {
+		if(!win){
 		// Checked if the player can click on the cell
 		if (e.target.innerHTML == "") {
 			// Put the symbol in the col
@@ -22,19 +24,51 @@ cols.forEach((col) => {
 
 			// check the end of the game
 
-			if ((a1 == "player" + current_player + ".a1") && (a2 == "player" + current_player + ".a2") && (a3 == "player" + current_player + ".a3") ||
-				(b1 == "player" + current_player + ".b1") && (b2 == "player" + current_player + ".b2") && (b3 == "player" + current_player + ".b3") ||
-				(c1 == "player" + current_player + ".c1") && (c2 == "player" + current_player + ".c2") && (c3 == "player" + current_player + ".c3") ||
-				
-				(a1 == "player" + current_player + ".a1") && (b1 == "player" + current_player + ".b1") && (c1 == "player" + current_player + ".c1") ||
-				(a2 == "player" + current_player + ".a2") && (b2 == "player" + current_player + ".b2") && (c2 == "player" + current_player + ".c2") ||
-				(a3 == "player" + current_player + ".a3") && (b3 == "player" + current_player + ".b3") && (c3 == "player" + current_player + ".c3") ||
-				
-				(a1 == "player" + current_player + ".a1") && (b2 == "player" + current_player + ".b2") && (c3 == "player" + current_player + ".c3") ||
-				(a3 == "player" + current_player + ".a3") && (b2 == "player" + current_player + ".b2") && (c1 == "player" + current_player + ".c1")) {
-				
-				alert("won")
-		
+			if (a1.innerHTML != "" && a1.innerHTML == a2.innerHTML && a1.innerHTML == a3.innerHTML){
+				win = true;
+			} 
+
+			if (b1.innerHTML != "" && b1.innerHTML == b2.innerHTML && a1.innerHTML == b3.innerHTML){
+				win = true;
+			} 
+
+			if (c1.innerHTML != "" && c1.innerHTML == c2.innerHTML && c1.innerHTML == c3.innerHTML){
+				win = true;
+			} 
+
+			if (a1.innerHTML != "" && a1.innerHTML == b1.innerHTML && a1.innerHTML == c1.innerHTML){
+				win = true;
+			} 
+
+			if (a1.innerHTML != "" && a1.innerHTML == b1.innerHTML && a1.innerHTML == c1.innerHTML){
+				win = true;
+			} 
+
+			if (a2.innerHTML != "" && a2.innerHTML == b2.innerHTML && a2.innerHTML == c2.innerHTML){
+				win = true;
+			} 
+
+
+			if (a3.innerHTML != "" && a3.innerHTML == b3.innerHTML && a3.innerHTML == c3.innerHTML){
+				win = true;
+			} 			
+
+
+			if (a1.innerHTML != "" && a1.innerHTML == b2.innerHTML && a1.innerHTML == c3.innerHTML){
+				win = true;
+			} 
+
+
+			if (a3.innerHTML != "" && a3.innerHTML == b2.innerHTML && a3.innerHTML == c1.innerHTML){
+				win = true;
+			} 
+
+
+			if (win) {
+				setTimeout(function() { your_func(); }, 5000);
+				alert("The player"+current_player+" has win")
+			}}
+
 
 			// remove the active class from the current_player
 			document.querySelector(".player"+current_player).classList.remove("active");
