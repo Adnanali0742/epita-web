@@ -10,64 +10,54 @@ let c1 = document.querySelector('.c1');
 let c2 = document.querySelector('.c2');
 let c3 = document.querySelector('.c3');
 
+
 var win = false;
 
 let current_player = 1;
 
 cols.forEach((col) => {
 	col.onclick = (e) => {
-		if(!win){
-		// Checked if the player can click on the cell
-		if (e.target.innerHTML == "") {
-			// Put the symbol in the col
-			e.target.innerHTML = document.querySelector('.player'+current_player+'_play').innerHTML;
+			// Checked if the player can click on the cell
+			if (e.target.innerHTML == "") {
+				// Put the symbol in the col
+				e.target.innerHTML = document.querySelector('.player'+current_player+'_play').innerHTML;
 
 			// check the end of the game
 
+			// horizontal check
 			if (a1.innerHTML != "" && a1.innerHTML == a2.innerHTML && a1.innerHTML == a3.innerHTML){
 				win = true;
 			} 
-
 			if (b1.innerHTML != "" && b1.innerHTML == b2.innerHTML && a1.innerHTML == b3.innerHTML){
 				win = true;
 			} 
-
 			if (c1.innerHTML != "" && c1.innerHTML == c2.innerHTML && c1.innerHTML == c3.innerHTML){
 				win = true;
 			} 
 
+			//vertical check
 			if (a1.innerHTML != "" && a1.innerHTML == b1.innerHTML && a1.innerHTML == c1.innerHTML){
 				win = true;
 			} 
-
-			if (a1.innerHTML != "" && a1.innerHTML == b1.innerHTML && a1.innerHTML == c1.innerHTML){
-				win = true;
-			} 
-
 			if (a2.innerHTML != "" && a2.innerHTML == b2.innerHTML && a2.innerHTML == c2.innerHTML){
 				win = true;
 			} 
-
-
 			if (a3.innerHTML != "" && a3.innerHTML == b3.innerHTML && a3.innerHTML == c3.innerHTML){
 				win = true;
-			} 			
+			} 	
 
-
+			// diagonal check		
 			if (a1.innerHTML != "" && a1.innerHTML == b2.innerHTML && a1.innerHTML == c3.innerHTML){
 				win = true;
 			} 
-
-
 			if (a3.innerHTML != "" && a3.innerHTML == b2.innerHTML && a3.innerHTML == c1.innerHTML){
 				win = true;
 			} 
 
-
-			if (win) {
+			if (win == true) {
 				setTimeout(function() { your_func(); }, 5000);
 				alert("The player"+current_player+" has win")
-			}}
+			}
 
 
 			// remove the active class from the current_player

@@ -35,3 +35,11 @@ body {
 	background: #D69540;
 	cursor: pointer;
 }
+
+button{
+    float: left;
+    font-size: 1em;
+    background-color: #D69540; 
+
+    margin-top: 0.8em;
+  }
