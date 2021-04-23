@@ -26,8 +26,8 @@ body {
 
 .col {
 	border: 1px solid black;
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
 	text-align: center;
 }
 
@@ -36,10 +36,17 @@ body {
 	cursor: pointer;
 }
 
-button{
-    float: left;
-    font-size: 1em;
-    background-color: #D69540; 
-
-    margin-top: 0.8em;
-  }
+#but {
+        box-sizing: border-box;
+        width: 95px;
+        height: 40px;
+        border: 1px solid dodgerblue;
+        margin: auto;
+        border-radius: 4px;
+        font-family: Verdana, 
+            Geneva, Tahoma, sans-serif;
+        background-color: dodgerblue;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }

@@ -10,7 +10,28 @@ let c1 = document.querySelector('.c1');
 let c2 = document.querySelector('.c2');
 let c3 = document.querySelector('.c3');
 
+// Function to reset game
+function myfunc_2() {
+	location.reload();
+	document.getElementById('a1').value = '';
+	document.getElementById("a2").value = '';
+	document.getElementById("a3").value = '';
+	document.getElementById("b1").value = '';
+	document.getElementById("b2").value = '';
+	document.getElementById("b3").value = '';
+	document.getElementById("c1").value = '';
+	document.getElementById("c2").value = '';
+	document.getElementById("c3").value = '';
 
+}
+
+function clearBoard() {
+	Array.from(document.querySelectorAll('td'))
+	.map(cell => cell.innerText = '');
+	
+	document.getElementById(".col").innerText = 'X';
+	document.getElementById("label").innerText = 'Current player';
+}
 var win = false;
 
 let current_player = 1;
@@ -54,6 +75,8 @@ cols.forEach((col) => {
 				win = true;
 			} 
 
+
+
 			if (win == true) {
 				setTimeout(function() { your_func(); }, 5000);
 				alert("The player"+current_player+" has win")
@@ -77,4 +100,6 @@ cols.forEach((col) => {
 			alert('You can play here someone alreay play there !')
 		}
 	}
+
+
 });
