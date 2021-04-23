@@ -48,6 +48,7 @@ let current_player = 1;
 
 cols.forEach((col) => {
 	col.onclick = (e) => {
+		if(!win){
 			// Checked if the player can click on the cell
 			if (e.target.innerHTML == "") {
 				// Put the symbol in the col
@@ -59,7 +60,7 @@ cols.forEach((col) => {
 			if (a1.innerHTML != "" && a1.innerHTML == a2.innerHTML && a1.innerHTML == a3.innerHTML){
 				win = true;
 			} 
-			if (b1.innerHTML != "" && b1.innerHTML == b2.innerHTML && a1.innerHTML == b3.innerHTML){
+			if (b1.innerHTML != "" && b1.innerHTML == b2.innerHTML && b1.innerHTML == b3.innerHTML){
 				win = true;
 			} 
 			if (c1.innerHTML != "" && c1.innerHTML == c2.innerHTML && c1.innerHTML == c3.innerHTML){
@@ -87,7 +88,10 @@ cols.forEach((col) => {
 				win = true;
 			} 
 
-
+			if(a1.innerHTML != "" && a2.innerHTML != "" && a3.innerHTML != "" && b1.innerHTML != "" && b2.innerHTML != "" &&
+				b2.innerHTML != "" && b3.innerHTML != "" && c1.innerHTML != "" && c2.innerHTML != "" && c3.innerHTML != ""){
+				alert("oh no.. its tie.")
+			} 
 
 			if (win == true) {
 				// setTimeout(function() { your_func(); }, 5000);
@@ -110,11 +114,10 @@ cols.forEach((col) => {
 
 			// Add the active class to current_player
 			document.querySelector(".player"+current_player).classList.add("active");
-		} else {
+			}else {
 			// When a player play in a not empty cell
 			alert('You can play here someone alreay play there !')
+			}
 		}
 	}
-
-
 });
