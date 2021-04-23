@@ -88,13 +88,13 @@ cols.forEach((col) => {
 				win = true;
 			} 
 
+			// check if the game is tie or withdraw
 			if(a1.innerHTML != "" && a2.innerHTML != "" && a3.innerHTML != "" && b1.innerHTML != "" && b2.innerHTML != "" &&
 				b2.innerHTML != "" && b3.innerHTML != "" && c1.innerHTML != "" && c2.innerHTML != "" && c3.innerHTML != ""){
 				alert("oh no.. its tie.")
 			} 
 
 			if (win == true) {
-				// setTimeout(function() { your_func(); }, 5000);
 				alert("The player"+current_player+" has win")
 
 				localStorage.setItem('scrore_'+current_player, parseInt(localStorage.getItem('scrore_'+current_player)) + 1);

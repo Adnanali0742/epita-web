@@ -42,7 +42,7 @@ body {
 	height: 60px;
 	border: 1px solid dodgerblue;
 	margin: auto;
-	border-radius: 4px;
+	border-radius: 10px;
 	font-family: Verdana, 
 	Geneva, Tahoma, sans-serif;
 	background-color: dodgerblue;
@@ -57,7 +57,7 @@ body {
 	height: 60px;
 	border: 1px solid dodgerblue;
 	margin: auto;
-	border-radius: 4px;
+	border-radius: 10px;
 	font-family: Verdana, 
 	Geneva, Tahoma, sans-serif;
 	background-color: dodgerblue;
@@ -78,7 +78,3 @@ body {
 	font-size: 20px;
 }
 
-a {
-	color: red;
-	text-decoration: none;
-}
