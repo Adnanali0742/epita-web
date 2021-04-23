@@ -37,16 +37,48 @@ body {
 }
 
 #but {
-        box-sizing: border-box;
-        width: 95px;
-        height: 40px;
-        border: 1px solid dodgerblue;
-        margin: auto;
-        border-radius: 4px;
-        font-family: Verdana, 
-            Geneva, Tahoma, sans-serif;
-        background-color: dodgerblue;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-    }
+	box-sizing: border-box;
+	width: 100px;
+	height: 60px;
+	border: 1px solid dodgerblue;
+	margin: auto;
+	border-radius: 4px;
+	font-family: Verdana, 
+	Geneva, Tahoma, sans-serif;
+	background-color: dodgerblue;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#but1 {
+	box-sizing: border-box;
+	width: 100px;
+	height: 60px;
+	border: 1px solid dodgerblue;
+	margin: auto;
+	border-radius: 4px;
+	font-family: Verdana, 
+	Geneva, Tahoma, sans-serif;
+	background-color: dodgerblue;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#scores {
+	display: flex;
+	width: 50%;
+	margin: auto;
+}
+
+.score {
+	width: 50%;
+	text-align: center;
+	font-size: 20px;
+}
+
+a {
+	color: red;
+	text-decoration: none;
+}

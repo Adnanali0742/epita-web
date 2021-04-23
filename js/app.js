@@ -10,19 +10,38 @@ let c1 = document.querySelector('.c1');
 let c2 = document.querySelector('.c2');
 let c3 = document.querySelector('.c3');
 
+
+// Set the scrore from localstorage
+if (localStorage.getItem('scrore_1') == null) {
+	document.querySelector('.player1_score').innerHTML = 0;
+	localStorage.setItem('scrore_1', 0);
+	
+}
+if (localStorage.getItem('scrore_2') == null) {
+	document.querySelector('.player2_score').innerHTML = 0;
+	localStorage.setItem('scrore_2', 0);
+}
+
+document.querySelector('.player1_score').innerHTML = localStorage.getItem('scrore_1');
+document.querySelector('.player2_score').innerHTML = localStorage.getItem('scrore_2');
+
 // Function to reset game
 function myfunc_2() {
 	location.reload();
 	document.getElementById('a1').value = '';
-	document.getElementById("a2").value = '';
-	document.getElementById("a3").value = '';
-	document.getElementById("b1").value = '';
-	document.getElementById("b2").value = '';
-	document.getElementById("b3").value = '';
-	document.getElementById("c1").value = '';
-	document.getElementById("c2").value = '';
-	document.getElementById("c3").value = '';
+	document.getElementById('a2').value = '';
+	document.getElementById('a3').value = '';
+	document.getElementById('b1').value = '';
+	document.getElementById('b2').value = '';
+	document.getElementById('b3').value = '';
+	document.getElementById('c1').value = '';
+	document.getElementById('c2').value = '';
+	document.getElementById('c3').value = '';
+}
 
+function resetScore(){
+	localStorage.clear();
+	location.reload();
 }
 
 function clearBoard() {
@@ -56,6 +75,7 @@ cols.forEach((col) => {
 				win = true;
 			} 
 
+
 			//vertical check
 			if (a1.innerHTML != "" && a1.innerHTML == b1.innerHTML && a1.innerHTML == c1.innerHTML){
 				win = true;
@@ -66,6 +86,7 @@ cols.forEach((col) => {
 			if (a3.innerHTML != "" && a3.innerHTML == b3.innerHTML && a3.innerHTML == c3.innerHTML){
 				win = true;
 			} 	
+
 
 			// diagonal check		
 			if (a1.innerHTML != "" && a1.innerHTML == b2.innerHTML && a1.innerHTML == c3.innerHTML){
@@ -78,8 +99,11 @@ cols.forEach((col) => {
 
 
 			if (win == true) {
-				setTimeout(function() { your_func(); }, 5000);
+				// setTimeout(function() { your_func(); }, 5000);
 				alert("The player"+current_player+" has win")
+
+				localStorage.setItem('scrore_'+current_player, parseInt(localStorage.getItem('scrore_'+current_player)) + 1);
+				document.querySelector('.player'+current_player+'_score').innerHTML = localStorage.getItem('scrore_'+current_player);
 			}
 
 
