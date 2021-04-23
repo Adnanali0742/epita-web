@@ -28,15 +28,6 @@ document.querySelector('.player2_score').innerHTML = localStorage.getItem('scror
 // Function to reset game
 function myfunc_2() {
 	location.reload();
-	document.getElementById('a1').value = '';
-	document.getElementById('a2').value = '';
-	document.getElementById('a3').value = '';
-	document.getElementById('b1').value = '';
-	document.getElementById('b2').value = '';
-	document.getElementById('b3').value = '';
-	document.getElementById('c1').value = '';
-	document.getElementById('c2').value = '';
-	document.getElementById('c3').value = '';
 }
 
 function resetScore(){
